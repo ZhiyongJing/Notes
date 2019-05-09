@@ -6,6 +6,8 @@ Basic knowledge of JS
 
 ###
 2. JavaScript can change the content of html content
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+###
 3. JavaScript Can Change HTML Attribute Values
 button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
 img id="myImage"  style="width:100px">
