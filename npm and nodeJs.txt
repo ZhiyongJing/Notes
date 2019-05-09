@@ -1,0 +1,81 @@
+1. npm is the world's largest Software Registry.The registry contains over 800,000 code packages.Open-source developers use npm to share software. npm includes a CLI (Command Line Client) that can be used to download and install software. npm is installed with Node.js. This means that you have to install Node.js to get npm installed on your computer.
+###
+2. package in Node.js contains all the files you need for a module.Modules are JavaScript libraries you can include in your project.
+###
+3. The name npm (Node Package Manager) stems from when npm first was created as a package manager for Node.js.All npm packages are defined in files called package.json.The content of package.json must be written in JSON.At least two fields must be present in the definition file: name and version.
+###
+4. npm can manage dependencies.npm can (in one command line) install all the dependencies of a project.Dependencies are also defined in package.json.
+###
+###
+###
+###
+--
+1. Node.js is an open source server environment. Node.js allows you to run JavaScript on the server.Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
+###
+2. Node.js file
+  1) Node.js files contain tasks that will be executed on certain events. 
+  2) A typical event is someone trying to access a port on the server. 
+  3) Node.js files must be initiated on the server before having any effect. 
+  4) Node.js files have extension ".js"
+###
+3. Node.js job
+  1) Node.js can generate dynamic page content
+  2) Node.js can create, open, read, write, delete, and close files on the server
+  3) Node.js can collect form data
+  4) Node.js can add, delete, modify data in your database
+###
+4. Node.js has many built-in modelars which can be considered as JavaScript library.To include a module, use the require() function with the name of the module. You can create your own modular with experts.Modular_name=... and save in .js file. Then use require() to access it.
+  var http = require('http');//your application has access to the HTTP module, and is able to create a server
+  http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+  }).listen(8080);
+###
+5. Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.Use the createServer() method to create an HTTP server. The req argument that represents the request from the client, as an object (http.IncomingMessage object).This object has a property called "url" which holds the part of the url that comes after the domain name.
+  var http = require('http');
+  //create a server object:
+  http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});// the response is displayed as HTML
+    res.write('Hello World!'); //write a response to the client
+    res.write(req.url);//this property is the part of url that comes after the domain name(http://localhost:8080/).
+    res.end(); //end the response
+  }).listen(8080); //the server object listens on port 8080
+###
+6. Node.js file system module allows you to work with the file system on your computer.
+  1) read file
+  var http = require('http');
+  var fs = require('fs');
+  http.createServer(function (req, res) {
+    fs.readFile('demofile1.html', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.write(data);
+      res.end();
+    });
+  }).listen(8080);
+  2) create file
+  var fs = require('fs');
+  fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  });
+###
+7. Every action on a computer is an event. Like when a connection is made or a file is opened. Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file.Node.js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.To include the built-in Events module use the require() method. In addition, all event properties and methods are an instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter object:
+  var fs = require('fs');
+  var readStream = fs.createReadStream('./demofile.txt');
+  /*Write to the console when the file is opened:*/
+  readStream.on('open', function () {
+    console.log('The file is open');
+  });
+###
+--
+
+###
+4. Webpack (stylised webpack) is an open-source JavaScript module bundler. It is a module bundler primarily for JavaScript, but it can transform front-end assets like HTML, CSS, even images if the corresponding plugins are included. Webpack takes modules with dependencies and generates static assets representing those modules
+
+
+
+
+
+
+
+

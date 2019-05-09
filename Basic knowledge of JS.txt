@@ -1,0 +1,221 @@
+Basic knowledge of JS
+1. JavaScript is  is the programming language of HTML and the Web. And also it's one of the 3 languages all web developers must learn.Web pages are not the only place where JavaScript is used. Many desktop and server programs use JavaScript. Node.js is the best known. Some databases, like MongoDB and CouchDB, also use JavaScript as their programming language.
+  1. HTML to define the content of web pages
+  2. CSS to specify the layout of web pages
+  3. JavaScript to program the behavior of web pages
+
+###
+2. JavaScript can change the content of html content
+3. JavaScript Can Change HTML Attribute Values
+button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+img id="myImage"  style="width:100px">
+button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+###
+4. JavaScript Can Change HTML Styles (CSS)
+document.getElementById("demo").style.fontSize = "35px";
+### 
+5. JavaScript Can Hide/Display HTML Elements
+document.getElementById("demo").style.display = "none";
+document.getElementById("demo").style.display = "block";
+###
+6. JavaScript code must be inserted between script and /script tags.A JavaScript function is a block of JavaScript code, that can be executed when "called" for. Scripts can be placed in the body, or in the head section of an HTML page, or in both.
+###
+7. Scripts can also be placed in external files with the postfix".js" when the same code is used in many different web pages. External scripts can be referenced with a full URL or with a path relative to the current web page.Placing scripts in external files has some advantages:
+  1. It separates HTML and code
+  2. It makes HTML and JavaScript easier to read and maintain
+  3. Cached JavaScript files can speed up page loads.
+script src="myScript.js"></script>
+script src="https://www.w3schools.com/js/myScript1.js"></script>
+script src="/js/myScript1.js"></script>
+###
+8. JavaScript can "display" data in different ways:
+    Writing into an HTML element, using innerHTML.
+    script>document.getElementById("demo").innerHTML = 5 + 6;</script>
+    Writing into the HTML output using document.write().
+    script>document.write(5 + 6);</script>
+    Writing into an alert box, using window.alert().
+    script>window.alert(5 + 6);</script>
+    Writing into the browser console, using console.log().(For debugging purposes,)
+    script>console.log(5+6);</script>
+    Using document.write() after an HTML document is loaded, will delete all existing HTML. Should only be used       for testing
+    button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+###
+9. A JavaScript program is a list of programming statements. In HTML, JavaScript programs are executed by the web   browser.All JavaScript identifiers are case sensitive. JavaScript programmers tend to use camel case that starts with a lowercase letter. A variable declared without a value will have the value undefined.JavaScript evaluates expressions from left to right. JavaScript data type can be number, string and object.
+ var a, b, c;
+ var x = 2 + 3 + "s";(result is 5s)
+ var x = "Volvo" + 16 + 4;(result is Volvo164)
+ ===	equal value and equal type
+ var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+ document.getElementById("demo").innerHTML =person.firstName + " is " + person["age"] + " years old.";
+ var cars = ["Saab", "Volvo", "BMW"];
+ typeof "John"         // Returns "string"
+ typeof function myFunc(){}   // Returns "function"
+ typeof null                  // Returns "object"
+ person = null; //Now value is null, but type is still an object
+ person = undefined //Now both value and type is undefined
+ ###
+10. Accessing a function without () will return the function definition instead of the function result.
+  function a(p1,p2){...}
+###
+11. JavaScript function.Do Not Declare Strings, Numbers, and Booleans as Objects!They complicate your code and slow down execution speed
+  var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;}
+  };
+  var s = person.fullName();
+###
+12. HTML events are "things" that happen to HTML elements.When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+  button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>//change the document
+  button onclick="this.innerHTML = Date()">The time is?</button>//change the button itself
+###
+13. String with \. Some browsers do not allow spaces behind the \ character. The soft way is we use +. String method 
+  document.getElementById("demo").innerHTML = "Hello \
+  Dolly!";
+  var x = "Johon";
+  var sln = x.length;
+  var pos = x.indexOf("o");//return 1
+  var pos = x.indexOf("o",1);// start from postion 1
+  var pos = x.lastIndexOf("o");return 3
+  var pos = x.search("o"); return 1
+  var res = x.slice(1, 3);// not include the end. return oh
+  var n = x.replace("o", "x");// replace the first o and return a new string
+  var n = x.replace(/O/i, "x");//avoid the case sentive
+  var n = x.replace(/O/g, "x");//replace all O
+  var text2 = x.toUpperCase();
+  var y = new String("John");// (x == y) is true but (x===y) is false
+  var z = new String("John");//(x===y) and (x==y) are false
+###
+14. JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.JavaScript numbers are always stored as double precision floating point numbers, floating point arithmetic is not always 100% accurate. we use division and mutiply.toFixed() returns a string, with the number written with a specified number of decimals. toPrecision() returns a string, with a number written with a specified length:
+  var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+  var x = 0.2 + 0.1;         // x will be 0.30000000000000004
+  var x = "10";
+  var y = "2";
+  var z= x/y; z will be 5
+  var x = 100 / "Apple";  // x will be NaN (Not a Number)
+  var x = 100 / "10";     // x will be 10
+  var z = NaN + "5";         // z will be NaN5
+  typeof NaN;            // returns "number"
+  Number(new Date("2017-09-30"));    // returns 1506729600000 milliesecond
+###
+15. Array can store different type element, array, variable, object and function.JavaScript does not support arrays with named indexes.Avoid new Array(). Use [] instead.
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.push("Lemon");//add element at the end and return the length of new array
+  fruits.pop();//removes the last element and return it
+  fruits.unshift("Lemon"); // add the element at the beginning
+  fruits.shift();//remove the first element and return it
+  fruits[6]="Lemon"; two undefined element in postion 4 5.
+  fruits.toString();//convert array to string
+  fruits.join(" * ");//convert array to string with filed * between each element
+  delete fruits[0];           // Changes the first element in fruits to undefined
+  fruits.sort();// the sort() function sorts values as strings.
+  nums.sort(function(a, b){return a - b});// sort the element as number
+###
+16. Everything without value is false. String() and toString() can convert number, Date, Boolean to string. Number() can convert string to number.The unary + operator can be used to convert a variable to a number. JavaScript automatically calls the variable's toString() function when you try to "output" an object or a variable
+  var x = false;//typeof x is boolean
+  var y = new Boolean(false);//typeof y is object
+  Number("3.14")    // returns 3.14
+  Number(" ")       // returns 0 
+  Number("")        // returns 0
+  Number("99 88")   // returns NaN
+  var y = "5";      // y is a string
+  var x = + y;      // x is a number
+  Number(false)     // returns 0
+  Number(true)      // returns 1
+###
+17. the lifetime of variable in JS.Local variables are deleted when the function is completed.In a web browser, global variables are deleted when you close the browser window (or tab), but remain available to new pages loaded into the same window.
+###
+18. Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function). U can use the variable first then decalre it.Variables and constants declared with let or const are not hoisted! JavaScript only hoists declarations, not initializations. with "use strict" makes it easier to write "secure" JavaScript.
+  var x;
+  var y += x;
+  x = 3;
+  y = 4;
+  var y+=z;//z is undefined
+  var z = 3;
+###
+19. this keyword refers to the object it belongs to. The call() and apply() methods are predefined JavaScript methods.They can both be used to call an object method with another object as argument.
+  function myF(){return this;}//this refers to the Global object [object Window].
+  button onclick="this.style.display='none'">Click to Remove Me!</button>//this refers to the button
+###
+20. You can use console.log(variable) to display JavaScript values in the debugger window.Use === Comparison. The == comparison operator always converts (to matching types) before comparison. The === operator forces comparison of values and type.Switch statements use strict comparison
+  0 == "";        // true
+  1 == "1";       // true
+  1 == true;      // true
+  0 === "";       // false
+  1 === "1";      // false
+  1 === true;     // false
+  var x = 10;
+  switch(x) {
+    case "10": alert("Hello");//switch not work. change to case 10:
+  }
+###
+21. JavaScript objects, variables, properties, and methods can be undefined.In addition, empty JavaScript objects can have the value null.you must test for not undefined before you can test for not null.
+  if (typeof myObj !== "undefined" && myObj !== null) //correct
+###
+22. 
+  1. Reduce Activity in Loops. Statements or assignments that can be placed outside the loop will make the loop run faster.  
+  2. Reduce DOM Access.Accessing the HTML DOM is very slow, compared to other JavaScript statements.If you expect to access a DOM element several times, access it once, and use it as a local variable.
+  3. Reduce DOM Size.Keep the number of elements in the HTML DOM small.
+  4. Avoid Unnecessary Variables. Don't create new variables if you don't plan to save values.
+  5. Delay JavaScript Loading.Putting your scripts at the bottom of the page body lets the browser load the page first.An alternative is to use defer="true" in the script tag. The defer attribute specifies that the script should be executed after the page has finished parsing, but it only works for external scripts.
+  for (i = 0; i < arr.length; i++)// write var l = arr.length() befor loop, then i < l. these will be better
+###
+23. 
+  1) JavaScript Form Validation.HTML form validation can be done by JavaScript.If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted.
+    script>function validateForm() {
+      var x = document.forms["myForm"]["fname"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+    }</script>
+ 2) Automatic HTML Form Validation. HTML form validation can be performed automatically by the browser. If a form field (fname) is empty, the required attribute prevents this form from being submitted.
+  form action="/action_page.php" method="post">
+  input type="text" name="fname" required>
+  input type="submit" value="Submit"></form>
+###
+24. 
+  1) Data validation is the process of ensuring that user input is clean, correct, and useful. Server side validation is performed by a web server, after input has been sent to the server.Client side validation is performed by a web browser, before input is sent to a web server.(Constraint Validation HTML Input Attributes:required, type, etc)
+  2) Constraint Validation DOM Methods
+  input id="id1" type="number" min="100" max="300" required>
+  button onclick="myFunction()">OK</button>
+  p id="demo"></p>
+  script>
+  function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (!inpObj.checkValidity()) {
+      document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    }
+  }</script>
+  3) Validity Properties
+  input id="id1" type="number" max="100">
+  button onclick="myFunction()">OK</button>
+  p id="demo"></p>
+  script>
+  function myFunction() {
+    var txt = "";
+    if (document.getElementById("id1").validity.rangeOverflow) {
+      txt = "Value too large";
+    }
+    document.getElementById("demo").innerHTML = txt;
+  }
+  </script>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

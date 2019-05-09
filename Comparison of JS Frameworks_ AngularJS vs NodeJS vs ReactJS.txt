@@ -1,0 +1,84 @@
+Comparison of JS Frameworks: AngularJS vs NodeJS vs ReactJS
+AngularJS
+Launched in 2009 by Google, AngularJS is an open source client-side web framework. It assists AngularJS developers to resolve issues in single page web application containing a shell page with multiple views. It gels up well with all other libraries and thus helps in extending HTML vocabulary for your web application.
+
+AngularJS Development works on the features like routing, data binding, templates, dependency injection, directives, deep linking, and filters.
+
+With a large support community, there can be some top reasons to choose AngularJS
+There is an injection subsystem with inbuilt dependency
+It allows simple routing and angular data binding
+It allows to create customized document object model(DOM) easily
+Amazing user interfaces can be built by help of AngularJS
+Data must be synchronized between components and model view
+It can be considered as an extension to HTML syntax and can create reusable components by directives
+It provides great angular libraries along with robust template building solutions
+The process of unit testing with Angular JS includes Injection of mock data into your controller and then measuring the output with behavior. Individual test pages are created and tested one by one and then they further interact with components to see if it works.
+What can be various drawbacks of choosing AngularJS?
+There can be some performance issues with DOM elements
+Sometimes the scope of the application can be hard to debug
+Limited routing
+As pages embed interactive elements, Angular becomes slow with pages
+It is very difficult to integrate the third party
+One can easily learn AngularJS
+Node.js
+Built on Chrome V8 JavaScript Engine, Node.JS is a JavaScript runtime that makes use of an event-driven, non-blocking I/O model thus making it lightweight and efficient. Node.JS package ecosystem is the largest ecosystem of open source libraries in the world.
+
+Node.JS is an open source server framework that makes use of JavaScript on Server and runs on various platforms like Windows, Linux, Mac OS X and Unix etc.
+
+Reasons to choose Node.js
+Node.JS developers write server-side applications in JavaScript
+Node.JS developers can scale up applications created in Node.JS in vertical as well as horizontal manners
+Google’s V8 JavaScript engine compiles the code written in JavaScript directly into machine code
+It further supports caching of individual modules
+It is highly extensible
+It supports real-time web application development
+Cons of Node.js
+It does not have a rich library
+Node.JS keeps changing at frequent intervals. An all-together new API can come up with backward incompatible changes.
+It follows asynchronous programming approach rather than linear blocking I/O programming.
+You won’t find Node.JS suitable for your large and complex applications development. It does not support both multi-threaded programming. It queues the incoming requests and executes them separately when log running tasks have to be processed. This increases the time required by an application to respond to user requests.
+ReactJS
+The main idea behind ReactJS development was to find a framework that helps in building a dynamic library with high performance. A suitable example of this was to provide newsfeeds at the same time when people are chatting. Optimization of the development process and bringing on JavaScript was all that was required at that time. ReactJS is more like an open-source JavaScript library rather than a framework. Used for building amazing user interfaces, it is good for rendering performance.
+
+Reasons to choose React.js/React/ReactJS
+Out of the several reasons React.JS can be future of hybrid mobile app, some of the interesting ones are:
+
+React’s virtual DOM is faster as it only refreshes a part of the page, rather than the conventional full refresh model
+Easy to create UI Test Cases
+Easy to reuse the code components
+It can display components in large amounts quickly and efficiently
+Specialized chrome extension makes it easy to debug
+Any data changes require manual processing
+It is view oriented
+Rendering the code from the server to browser will eventually improve the SEO of the webpage
+It improves debugging speed, making it easier for developers
+It covers both iOS and Android
+As it makes use of reusable components, it becomes easy for the hybrid applications to render natively
+React Native UI components can be applied without re-writing to an existing app’s code
+It’s one of the top JavaScript frameworks among ReactJS developers and is growing
+It provides support for both front-end and server-side
+Cons of ReactJS
+Making use of JSX which allows mixing HTML with JavaScript is considered a serious disadvantage by ReactJS developers as it is complex and has a steep learning curve.
+With constant release of new tools, documentation still remains incomplete, which makes it difficult for new ReactJS developers to understand and code.
+With high pace of development, ReactJS developers must quickly learn new ways of development. With fast evolution, not every developer is able to keep pace.
+Succinct Comparison:
+Technology	ReactJS	AngularJS	Node.JS
+Author	Jordan Walke	Misko Hevery	Ryan Dahl
+Type	Open Source JS library	Fully-featured MVC framework	Framework for JavaScript execution
+Tool Chain(Libraries)	High	Low	High. Node.JS comes along with best tools for development:
+(1) IDEs/code editors
+(2) Libraries
+(3) GUI tools
+(4) CLI tools
+Language	JSX	JavaScript, HTML	JavaScript
+Learning Curve	Low	High	High
+Packaging	Strong	Weak	JXcore (JX packages) and encryption of source files
+Rendering	Server Side	Client Side	Server-Side
+App Architecture	None, combined with Flux	MVC	Mean Stack Architecture MVC/MVVM
+Data Binding	Uni-Directional	Bi-Directional	B–Directional
+DOM	Virtual DOM	Regular DOM	No DOM. It’s a runtime environment. It does not render DOM.
+Latest Version	16.4.0 (May 2018)	1.7.4	V10.0.0
+What’s our take on it?
+
+AngularJS is a fully featured framework while ReactJS is a library. You will have to write less code with ReactJS and it even performs better due to the implementation of virtual DOM. As React has just started its community is growing. Node.js is a JavaScript runtime which is fast and lightweight. It can be used to create fast and scalable networking applications. With Client-Side data rendering and an upper configuration, ReactJS is an outright choice of JavaScript framework Developers.
+
