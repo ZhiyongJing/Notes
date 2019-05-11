@@ -1,0 +1,13 @@
+1.  Spring framework provides comprehensive infrastructure support for developing Java applications. It's packaged with some features like Srping JDBC, Spring MVC, Spring security, Spring AOP, Spring Test. These modules can drastically reduce the development time of an application.
+2.  Srping boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. It takes an opinionated view of the Spring platform which paved the way for a faster and more efficient development eco-system. Some features like:
+    1)Opinionated ‘starter’ dependencies to simplify build and application configuration
+    2)Embedded server to avoid complexity in application deployment
+    3)Metrics, Helth check, and externalized configuration
+    4)Automatic config for Spring functionality – whenever possible
+3.  Spring Boot provides a number of starter dependencies for different Spring modules. Some of the most commonly used ones are:
+    1)spring-boot-starter-data-jpa
+    2)spring-boot-starter-security
+    3)spring-boot-starter-test
+    4)spring-boot-starter-web
+    5)spring-boot-starter-thymeleaf
+4.  The basic difference in bootstrapping of an application in Spring and Spring Boot lies with the servlet. Spring uses either the web.xml or SpringServletContainerInitializer as its bootstrap entry point.On the other hand, Spring Boot uses only Servlet 3 features to bootstrap an application. Let’ talk about this in detail.
