@@ -1,1 +1,27 @@
 1.  Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+1 . 帮你下载jar包 
+maven项目会有一个 pom.xml文件， 在这个文件里面，只要你添加相应配置，他就会自动帮你下载相应jar包，不用你铺天盖地的到处搜索你需要的jar包了 
+下面是示范配置文件pom.xml
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">   <modelVersion>4.0.0</modelVersion>    <groupId>exam</groupId>    <artifactId>exam_3</artifactId>    <packaging>war</packaging>    <version>0.0.1-SNAPSHOT</version>    <dependencies>     <dependency>       <groupId>junit</groupId>       <artifactId>junit</artifactId>       <version>3.8.1</version>       <scope>test</scope>     </dependency>     <dependency>         <groupId>org.springframework</groupId>         <artifactId>spring-web</artifactId>         <version>3.0.5.RELEASE</version>     </dependency>     <dependency>         <groupId>org.springframework</groupId>         <artifactId>spring-webmvc</artifactId>         <version>3.0.5.RELEASE</version>     </dependency>     </dependencies> </project>
+以上主要看的<dependencies>结点里面的内容， 
+里面每配置一个<dependency>， 
+<groupId>org.springframework</groupId> 项目名 
+<artifactId>spring-webmvc</artifactId> 项目模块 
+<version>3.0.5.RELEASE</version> 项目版本 
+maven都会通过，项目名-项目模块-项目版本来maven在互联网上的代码库中下载相应jar包。 
+所以这就是maven的功能之一，帮你下载jar包
+
+2 . 寻找依赖，帮你下载依赖 
+寻找jar包是第一基本功能，寻找依赖在这个是在这个基础上的功能。 
+在maven的代码库中，每一个jar包也有自己的 pom.xml文件，而这个文件里面也会有<dependency>配置，什么依赖范围我就不细说了，我想表达的就是，只要你配置的jar包所依赖的其他jar包都会被maven自动下载下来。 
+例如: 你配置了
+
+    <dependency>         <groupId>org.springframework</groupId>       <artifactId>spring-core</artifactId>        <version>2.6</version>   </dependency>
+你要maven帮你下载spring-core-2.6.jar包 
+而这个jar包里面需要用到commons-logging.jar这个包， 
+这叫就依赖，spring-core-2.6.jar依赖于commons-logging.jar。 
+这就是maven第二个作用，帮你下载依赖包。
+
+3 . 热部署，热编译 
+意思就是，在你web项目已经运行的时候，修改代码的能直接被web服务器所接受，就不需要你 重启服务器了，或者重新部署代码了，而且你可以直接通过maven 打包war或者jar项目。
