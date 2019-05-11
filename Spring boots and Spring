@@ -10,4 +10,33 @@
     3)spring-boot-starter-test
     4)spring-boot-starter-web
     5)spring-boot-starter-thymeleaf
-4.  The basic difference in bootstrapping of an application in Spring and Spring Boot lies with the servlet. Spring uses either the web.xml or SpringServletContainerInitializer as its bootstrap entry point.On the other hand, Spring Boot uses only Servlet 3 features to bootstrap an application. Let’ talk about this in detail.
+4.  The basic difference in bootstrapping of an application in Spring and Spring Boot lies with the servlet. Spring uses either the web.xml or SpringServletContainerInitializer as its bootstrap entry point.On the other hand, Spring Boot uses only Servlet 3 features to bootstrap an application.
+5.  Spring supports both the legacy web.xml way of bootstrapping as well as the latest Servlet 3+ method.
+Let’s see the web.xml approach in steps:
+    1)  Servlet container (the server) reads web.xml
+    2)  The DispatcherServlet defined in the web.xml is instantiated by the container
+    3)  DispatcherServlet creates WebApplicationContext by reading WEB-INF/{servletName}-servlet.xml
+    4)  Finally, the DispatcherServlet registers the beans defined in the application context
+
+Here’s how Spring bootstraps using Servlet 3+ approach:
+    1)  The container searches for classes implementing ServletContainerInitializer  and executes
+    2)  The SpringServletContainerInitializer finds all classes implementing WebApplicationInitializer
+    3)  The WebApplicationInitializer creates the context with XML or @Configuration classes
+    4)  The WebApplicationInitializer creates the DispatcherServlet with the previously created context.
+6.  The entry point of a Spring Boot application is the class which is annotated with @SpringBootApplication:
+    @SpringBootApplication
+    public class Application {
+        public static void main(String[] args) {
+            SpringApplication.run(Application.class, args);
+        }
+    }
+By default, Spring Boot uses an embedded container to run the application. In this case, Spring Boot uses the public static void main entry-point to launch an embedded web server.
+Also, it takes care of the binding of the Servlet, Filter, and ServletContextInitializer beans from the application context to the embedded servlet container.
+Another feature of Spring Boot is that it automatically scans all the classes in the same package or sub packages of Main-class for components.
+Spring Boot provides the option of deploying it as a web archive in an external container as well. In this case, we have to extend the SpringBootServletInitializer:
+
+@SpringBootApplication
+public class Application extends SpringBootServletInitializer {
+    // ...
+}
+Here the external servlet container looks for the Main-class defined in the META-INF file of the web archive and the SpringBootServletInitializer will take care of binding the Servlet, Filter, and ServletContextInitializer.
