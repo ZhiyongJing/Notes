@@ -99,3 +99,130 @@ More bulid-in functions in list
   lst.sort() # [1, 2, 7, 8, 9] – sort elements in ascending
   s.insert(i,x)
   lst.insert(3,2) # [1, 2, 7, 2, 8, 9] – insert x at location i
+###
+17. List assignment and referencing
+  >>> data = [0]*5
+  >>> data
+  [0, 0, 0, 0, 0]
+  >>> a = [1,2,3]
+  >>> b = a
+  >>> b[1] = 7
+  >>> a
+  [1, 7, 3]
+  >>> a = [1,2,3]
+  >>> b = a[:]#Use true copy!
+###
+18. Identity and equality. == means equality (Are the values equal?). “is” means identity (Are the objects identical(i.e., points to same
+memory location?). Two are different. “x == y” could be True, while "x is y” is False.
+###
+19. join(from list to string) and split(string to list).
+  >>> string = ”to be or not to be”
+  >>> string.split(" ")
+  ['to', 'be', 'or', 'not’, 'to', 'be'
+  >>> len(string.split(" "))
+  6
+###
+20. Tuple is very similar to list but it is immutable. Dictionary is unordered key, value pairs. Indexing by key. Two ways to define dictionary dict() and {}.
+  dict2 = dict1.copy()
+  dict1.update(dict2) #It may overwrite existing entries!
+###
+21. file operations.
+  f=open("filename")#Open a file, return a file value
+  f=open("filename", "w")#Open a file for writing, overwrites it if file exists
+  f. read()#Return the entire file contents to a string
+  f. read(n)#Return no more than n character values
+  f. readline()#Return the next line of input
+  f. readlines()#Return all the file as a list
+  f. write(s)#Write string s to file
+  f. writelines(lst)#Write list lst to file
+  f. close()#Close the file
+  f = open('peas.txt’)
+  counts = {}
+  for eachline in f:
+      for ele in eachline.split():
+          counts[ele] = counts.get(ele,0) + 1
+          print counts
+  f.close()
+###
+22. functions. The three functions map, filter, and reduce produce new lists that are transformation of the argument.
+lambda function
+  >>> square = lambda x: x**2
+  >>> square(2)
+  4
+  >>> add = lambda x,y : x + y
+  >>> add(5,3)
+  8
+mapping function. One-to-one transformation through a function
+  >>> lst = [1,2,3,4,5]
+  >>> list(map(lambda x: x ** 2,lst))
+  [1, 4, 9, 16, 25]
+  >>> list(map(lambda x: 1 if x % 2 == 0 else 0,lst)) 
+  [0, 1, 0, 1, 0]
+filter function. Apply a condition, retain ones that satisfy the condition
+  >>> filter(lambda x: x % 2 == 0,lst)
+  [2, 4]
+Reduction: Apply a binary function to each member of a list in a row.
+  >>> filter(lambda x: x % 2 == 0,lst)
+  [2, 4]
+list comprehension
+  >>> lst = [1,2,3,4,5]
+  >>> [x**2 for x in lst]
+  [1, 4, 9, 16, 25]
+  >>> [x**2 for x in lst if x%2 ==0]
+  [4, 16]
+  >>> [1 if x%2==0 else 0 for x in lst]
+  [0, 1, 0, 1, 0]
+###
+23. To define a class in Python: Use the keyword class, followed by the class name, a parenthesized list of parent classes, and a colon.The body contains a collection of functions called methods and data values.
+class BankAccount():
+    def __init__(self):#constructor
+        self.balance = 0 #data fields. data that an object requires. A new data field is created the first time it is assigned a value
+    def deposit(self,amount):
+        self.balance += amount
+    def withdraw(self,amount):
+        self.balance -= amount
+    def get_balance(self):
+        return self.balance
+class CheckingAccount (BankAccount):  ## inheritance
+  def __init__ (self, initBal):
+    BankAccount.__init__ (self, init_bal) #When a class name is on the left of the dot, self must be passed as an explicit argument
+    self.check_record = {}
+  def process_check (self, number, to_who, amount):
+    self.withdraw(amount)
+    self.check_record[number] = (to_who, amount) 
+  def check_info (self, number):
+    if self.check_record.has_key(number): 
+      return self.check_record[number] #When a class name is on the left of the dot, self must be passed as an explicit argument
+    else:
+      return 'no such check'
+###
+24. When Python looks for a meaning for a simple variable/name, it searches the scopes in the order: Local, Enclosing, Global and Built-in. Enclosing occurs when one function is defined inside another. A lambda function also creates its own local scope
+###
+25. A module is simply a Python file. A Python module is just a Python program with a list of Python statements in it, saved as a file. 
+  1)  import foo #import statement scans a file, executes each statement in the program.It constructs a dictionary for all names within the modular.
+    foo.bar() at execution time invokes two run-time lookups:
+      • One finds the meaning for foo in the current name space 
+      • One finds the data field bar in foo’s name dictionary
+  2)  from foo import bar #It imports a single function, not a module
+  3)  Be careful with “from math import *”. Any name in the current scope that matches a name in the imported scope will be overridden
+      • Local is overridden
+      • >>>e=42
+      >>> from math import * 
+      >>> print(e) 2.71828182846
+      >>>e=42
+      >>> from math import e as e_const 
+      >>> print(e)
+      42
+      >>> print(e_const)
+      2.71828182846
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
