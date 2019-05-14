@@ -1,0 +1,7 @@
+1.  Perl is practical extraction and report language. a very high level language. A glue language–excellent for uniting different systems. A scripting language–commands are usually placed in a text file, then interpreted by the perl interpreter. Optimized for text-processing, I/O, and system tasks. Incorporates syntax parts from bsh, csh, awk, sed, grep and C.
+###
+2.  Perl is a general-purpose programming language originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and more. It is used for mission critical projects in the public and private sectors. Perl is an Open Source software, licensed under its Artistic License, or the GNU General Public License (GPL).
+###
+3.  Perl is a free-form language: you can format and indent it however you like. Whitespace serves mostly to separate tokens, unlike languages like Python where it is an important part of the syntax, or Fortran where it is immaterial.
+###
+4.  /usr/bin/perl is actual the perl interpreter binary. 
