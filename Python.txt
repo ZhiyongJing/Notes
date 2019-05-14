@@ -1,7 +1,9 @@
   1.  Scripting language is interpreted. The advantages: rapid development(no compliation requirment); Portable(cross platform, no machine code, are good to control other applications); but slower than compliered language. Scripting languages are flexible(Vast modules, packages and extensions avalible). Scripting languages can be used for system administration, web development(server side, client side), text processing/manipulation, gluing programs and tool, job control and automaion and GUI.
+###  
 2.  The interpreter is a program that executes scripts without first compiling them into machine code per statement(Read–Eval–Print Loop (REPL)).
   1)  parse the sourcecode and perform its behavior directly
   2)  translate sourcecode into some efficient intermediate representation and immediately execute it
+###    
 3.  Examples of scripting languages are 
   • Shell(manyvariants),PowerShell
   • sed, awk ( Text processing)
@@ -10,12 +12,14 @@
   • Visual Basic ( VB A, VBScript, VB. NE T)
   • Javascript
   • Lua,R,...
+###    
 4.  Scripting languages provide an even higher- level of abstraction than java and C.
   • The main goal is programming productivity, performance is a secondary consideration
   • Provide primitive operations with greater functionality
 Initial scripting languages were for job control
   • 1960s,IBMSystem 360JCL(job control language)
   • Used to launch compilation,execution,and to check return codes
+###    
 5.   Scripting languages are as gluing languages. 
   • Often used to combine components
   • they assume a collection of useful components already exist in other languages
@@ -23,4 +27,20 @@ Initial scripting languages were for job control
   • ls–l|wc-l
   • e.g.,interface between database and Webserver
   Thus often called glue languages or system integration languages
-https://www.guru99.com/images/1/053018_0616_CompilervsI1.png
+6.  Date types in python: integer, float, boolean, string, list, tuples, dictionary, functions, class, modules.
+###  
+7.  • A named value is often termed a variable,represents aquantity that can change over time. Types are a property of values, not names, a name can store value of a new type by a new assignment. “in” operator for strings, lists, tuples and dictionaries.
+###  
+8.  print statement takes a series of values separated by commas, each value is converted into a string and then printed .Quotation marks are removed when printing
+###
+9.  input() takes a prompt as argument, prints it, waits for user input, returns the value typed as string.
+###
+10. • __init__.py tells Python to treat this directory as apackage. A Python package is simply a directory of Python module(s).Module: a python module is simply a Python source file. Many modules are available with Python dstribution, many of them are dowlonaded from PyPL.
+###
+11. A string is formed by a succession of characters.Characters can be accessed using position, or index.Strings are immutable (You cannot change portions of a string).
+  >>>'Python'[0]
+Slicing: operator to access a substring. A slice is a portion of the string starting at a given position up to but not including the ending position. Indexing and slicing also used in list and dictionary
+  >>>'realtor'[2:6] //'alto'
+  >>>'halter'[:4] //'halt'
+###
+12. Any text after a hash (#)in a line is ignored by Python interpreter
