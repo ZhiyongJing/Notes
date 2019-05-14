@@ -198,7 +198,7 @@ class CheckingAccount (BankAccount):  ## inheritance
 ###
 24. When Python looks for a meaning for a simple variable/name, it searches the scopes in the order: Local, Enclosing, Global and Built-in. Enclosing occurs when one function is defined inside another. A lambda function also creates its own local scope
 ###
-25. A module is simply a Python file. A Python module is just a Python program with a list of Python statements in it, saved as a file. 
+25. A module is simply a Python file. A Python module is just a Python program with a list of Python statements in it, saved as a file. Normally files that are used as modules contain only class and function definitions
   1)  import foo #import statement scans a file, executes each statement in the program.It constructs a dictionary for all names within the modular.
     foo.bar() at execution time invokes two run-time lookups:
       • One finds the meaning for foo in the current name space 
@@ -215,7 +215,10 @@ class CheckingAccount (BankAccount):  ## inheritance
       42
       >>> print(e_const)
       2.71828182846
-  
+###
+26. Package is a generalization of the module concept for larger projects. One can group a set of modules into a directory or a directory tree, then import and hierarchically refer to them using "package.subpackage.module" syntax.
+###
+27. pasing a webpage with beautifusoap. Connecting to the webpage, Parsing information ands Saving to disk
   
   
   
