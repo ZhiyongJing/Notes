@@ -43,4 +43,59 @@ Slicing: operator to access a substring. A slice is a portion of the string star
   >>>'realtor'[2:6] //'alto'
   >>>'halter'[:4] //'halt'
 ###
-12. Any text after a hash (#)in a line is ignored by Python interpreter
+12. Any text after a hash (#)in a line is ignored by Python interpreter. Assignment statement associates a name with the result of evaluating an expression.
+Same value assignment: several variables assigned the same value at once
+  >>>a = b = c = 3.0
+Simultaneous assignment:variables separated by commas. Must have the same number of expressions on the right side, also separated by commas
+  >>>sum, diff, prod = x + y, x-y, x * y
+A more subtle example
+  >>>x, y = y, x # exchanges the values of variables x and y, different than x = y , y = x
+###
+13. Indentation is the leading whitespace(space sand tabs) at the beginning of a line. Multiple statements of the same indentation belong to the same group.
+  if percent>= 90.0:
+    print("Congrats, you got an A”)
+  else:
+    print("You are doing well in this class”)
+    print("you did not get an A”)
+###
+14. range(1,8) denotes the range [1,8), i.e., 1 to 7 
+• range(10) denotes the range [0,9], i.e., 0 to 9 
+• range(0,10,2) iterates with a stride of 2
+###
+15. Function blocks begin with the def keyword, followed by the function name and parentheses. Code within a function starts with “:” and is indented. The optional “return [expression]” exits a function and returns a value.
+  def area_of_rect(w,h):
+      return w * h
+  print(‘the area of the rectangle 2 by 3 is ’, area_of_rect(2,3))
+###
+ 16.  A list is created inside square brackets. the type of elements can be different. list is mutable(different from string)
+  >>>lsttwo = [5,’hello’, lst]
+  >>> lst = [1, 4, 7, 9, 12]
+  >>> lst[1] = 5
+  >>> lst
+  [1, 5, 7, 9, 12]
+  >>> lst[1:3] = [2,3]
+  [1, 2, 3, 9, 12]
+  >>> del lst[2]
+  [1, 2, 9, 12]
+More bulid-in functions in list
+  # lst = [1, 7, 3, 9, 2]
+  s.append(x)
+  lst.append(4) # [1, 7, 3, 9, 2, 4] – growing the list
+  s.extend(ls)
+  lst.extend([8,5]) # [1, 7, 3, 9, 2, 4, 8, 5]
+  s.count(x)
+  lst.count(5) # 1 - number of occurrences of x
+  s.index(x)
+  lst.index(5) # 7 – the index of the first occurrence of x
+  s.pop()
+  lst.pop() # 5 – return and remove the last element
+  s.pop(i)
+  lst.pop(2) # 3 – return and remove the ith element
+  s.remove(x)
+  lst.remove(4) # search for x and remove it (1st one only)
+  s.reverse()
+  lst.reverse() # [8, 2, 9, 7, 1] - reverse elements in place
+  s.sort()
+  lst.sort() # [1, 2, 7, 8, 9] – sort elements in ascending
+  s.insert(i,x)
+  lst.insert(3,2) # [1, 2, 7, 2, 8, 9] – insert x at location i
