@@ -90,3 +90,8 @@ show log on just one line per commit
 git config format.pretty oneline
 use interactive adding
 git add -i
+
+
+
+
+http://rogerdudler.github.io/git-guide/
