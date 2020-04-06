@@ -1,0 +1,7 @@
+Pandas
+1.Pandas deals with the following three data structures −
+  Series: 1D labeled homogeneous array, sizeimmutable.
+  DataFrame:
+  Panel
+  These data structures are built on top of Numpy array, which means they are fast.
+ 
